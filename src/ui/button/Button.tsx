@@ -12,7 +12,7 @@ export const Button = ({
 	title: string;
 	onClick?: () => void;
 	htmlType?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
-	type: 'apply' | 'clear';
+	type: 'apply' | 'clear' | 'reset' | 'submit';
 }) => {
 	return (
 		<button
