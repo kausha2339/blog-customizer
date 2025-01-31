@@ -22,7 +22,7 @@ type SelectProps = {
 
 export const Select = (props: SelectProps) => {
 	const { options, placeholder, selected, onChange, onClose, title } = props;
-	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const [isOpen, setIsSelectOpen] = useState<boolean>(false);
 	const rootRef = useRef<HTMLDivElement>(null);
 	const placeholderRef = useRef<HTMLDivElement>(null);
 	const optionClassName = selected?.optionClassName ?? '';
@@ -31,20 +31,20 @@ export const Select = (props: SelectProps) => {
 		isOpen,
 		rootRef,
 		onClose,
-		onChange: setIsOpen,
+		onChange: setIsSelectOpen,
 	});
 
 	useEnterSubmit({
 		placeholderRef,
-		onChange: setIsOpen,
+		onChange: setIsSelectOpen,
 	});
 
 	const handleOptionClick = (option: OptionType) => {
-		setIsOpen(false);
+		setIsSelectOpen(false);
 		onChange?.(option);
 	};
 	const handlePlaceHolderClick: MouseEventHandler<HTMLDivElement> = () => {
-		setIsOpen((isOpen) => !isOpen);
+		setIsSelectOpen((isOpen) => !isOpen);
 	};
 
 	return (
