@@ -1,7 +1,5 @@
 import { useState, ReactNode, CSSProperties } from 'react';
 import { Article } from '../article';
-import clsx from 'clsx';
-// import { ArticleParamsForm } from '../article-params-form';
 import { ArticleParamsForm } from '../article-params-form';
 import {
 	ArticleStateType,
@@ -28,8 +26,8 @@ export const App = () => {
 	};
 	return (
 		<Wrapper tag='main'>
-			<div
-				className={clsx(styles.main)}
+			<main
+				className={styles.main}
 				style={
 					{
 						'--font-family': wrapperStyles.fontFamilyOption.value,
@@ -41,7 +39,7 @@ export const App = () => {
 				}>
 				<ArticleParamsForm onChange={onChange} />
 				<Article />
-			</div>
+			</main>
 		</Wrapper>
 	);
 };
